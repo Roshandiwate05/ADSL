@@ -1,0 +1,45 @@
+
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    int a[10],n;
+    cout<<"enter the size of array";
+    cin>>n;
+    cout<<"enter element:\n";
+    for(int i=1;i<=n;i++)
+    {
+    cin>>a[i];
+    }
+
+int low=1,high=n,mid;
+int first_zeros=-1;
+while(low<=high)
+{
+    mid=(low+high)/2;
+    if(a[mid]==0)
+    {
+        first_zeros=mid;
+        high=mid-1;
+    }
+    else
+    {
+      low=mid+1;
+    }
+}
+if (first_zeros !=-1)
+cout<<"number of zeros"<<(n-first_zeros+1)<<endl;
+else
+cout<<"number of zeros are present";
+}
+
+
+
+
+
+
+
+
+
+
